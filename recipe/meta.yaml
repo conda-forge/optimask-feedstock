@@ -17,10 +17,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - setuptools
   host:
     - python
     - numpy
     - pip
+    - setuptools
   run:
     - python
     - pandas
