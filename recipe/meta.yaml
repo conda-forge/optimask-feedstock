@@ -38,6 +38,8 @@ test:
     - pip check
   requires:
     - pip
+    - numpy
+    - pandas
 
 about:
   home: https://github.com/CyrilJl/optimask
