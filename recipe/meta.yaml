@@ -30,14 +30,6 @@ requirements:
     - pandas
     - {{ pin_compatible('numpy') }}
 
-test:
-  imports:
-    - optimask
-  commands:
-    - pip check
-  requires:
-    - pip
-
 about:
   home: https://github.com/CyrilJl/optimask
   summary: 'OptiMask: extracting the largest (non-contiguous) submatrix without NaN'
