@@ -13,13 +13,10 @@ build:
   noarch: python
   script: 
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - {{ PYTHON }} -m cythonize -i optimask/optimask_cython.pyx
   number: 0
 
 requirements:
   build:
-    - {{ compiler("c") }}
-    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - numpy                                 # [build_platform != target_platform]
