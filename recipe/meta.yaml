@@ -11,24 +11,32 @@ source:
 
 build:
   noarch: python
-  script: 
-    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-    - {{ PYTHON }} setup.py build_ext --inplace
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   build:
-    - {{ compiler('c') }}
-    - cython
+    - {{ compiler("c") }}
+    - cross-python_{{ target_platform }}    # [build_platform != target_platform]
+    - python                                # [build_platform != target_platform]
+    - cython                                # [build_platform != target_platform]
+    - numpy                                 # [build_platform != target_platform]
   host:
     - python
-    - numpy
     - pip
     - cython
+    - numpy
   run:
     - python
-    - pandas
-    - {{ pin_compatible('numpy') }}
+    - {{ pin_compatible("numpy") }}
+
+test:
+  imports:
+    - optimask
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://github.com/CyrilJl/optimask
