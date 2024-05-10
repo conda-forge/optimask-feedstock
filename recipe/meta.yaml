@@ -17,6 +17,7 @@ build:
 
 requirements:
   build:
+    - {{ compiler('c') }}
     - python                                # [build_platform != target_platform]
     - cython                                # [build_platform != target_platform]
     - numpy                                 # [build_platform != target_platform]
