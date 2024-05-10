@@ -26,6 +26,7 @@ requirements:
     - pip
     - cython
     - numpy
+    - pandas
   run:
     - python
     - {{ pin_compatible("numpy") }}
