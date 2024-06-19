@@ -13,11 +13,12 @@ build:
   script:
     - cython optimask/optimask_cython.pyx
     - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler("c") }}
+    - {{ stdlib("c") }}
     - python
     - cython
     - numpy
