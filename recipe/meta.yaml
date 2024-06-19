@@ -11,14 +11,13 @@ source:
 
 build:
   script:
-    - {{ PYTHON }} setup.py build_ext
-    - {{ PYTHON }} -m pip install . -vv
+    - cython optimask/optimask_cython.pyx
+    - {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   build:
     - {{ compiler("c") }}
-    - {{ stdlib("c") }}
     - python
     - cython
     - numpy
@@ -31,7 +30,6 @@ requirements:
     - pandas
   run:
     - python
-    - {{ pin_compatible("numpy") }}
     - numpy
     - pandas
 
