@@ -1,5 +1,5 @@
 {% set name = "optimask" %}
-{% set version = "1.2.3" %}
+{% set version = "1.2.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/optimask-{{ version }}.tar.gz
-  sha256: 6c67cfcd0bc2c7fb4a3772744e504935764bd28954d2cd36db14df92fe5a70a7
+  sha256: 443bcd5e5886ff007ea3df63eb1fc17691f44a9ae47501c48cb63d9cbff367fa
 
 build:
   script:
     - {{ PYTHON }} setup.py build_ext
     - {{ PYTHON }} -m pip install . -vv
-  number: 4
+  number: 0
 
 requirements:
   build:
@@ -47,6 +47,8 @@ test:
 
 about:
   home: https://github.com/CyrilJl/optimask
+  dev_url: https://github.com/CyrilJl/optimask
+  doc_url: https://optimask.readthedocs.io/en/latest/index.html
   summary: 'OptiMask: extracting the largest (non-contiguous) submatrix without NaN'
   description: 'OptiMask: extracting the largest (non-contiguous) submatrix without NaN'
   license: MIT
