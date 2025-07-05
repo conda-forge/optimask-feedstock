@@ -1,5 +1,5 @@
 {% set name = "optimask" %}
-{% set version = "1.3.9" %}
+{% set version = "1.3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/optimask-{{ version }}.tar.gz
-  sha256: b0fb763b88a6431348462f0b4e0177471b1d1014258796482e2a90569c291165
+  sha256: b9b96e37c659693a3b77c7a52eda2e318f202aab1ab73c23c317277c2287777b
 
 build:
   noarch: python
